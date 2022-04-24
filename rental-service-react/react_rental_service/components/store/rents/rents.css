@@ -1,0 +1,63 @@
+.services__individual__container {
+  border: 3px solid rgb(226, 226, 226);
+  margin: 1rem;
+  padding-bottom: 0.9rem;
+}
+
+.services__individual__container
+  > .services__individual__content
+  > .services__image {
+  width: 400px;
+  height: 250px;
+}
+
+.services__image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.services__bottom__content > div {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 3rem;
+  text-transform: capitalize;
+}
+
+.services__bottom__content > div {
+  display: flex;
+  justify-content: space-between;
+  line-height: 3rem;
+}
+
+.services__bottom__content > div > p:first-of-type {
+  font-weight: bold;
+  text-align: center;
+  margin-left: 0.85rem;
+}
+.services__bottom__content > div > p:last-of-type {
+  font-weight: normal;
+  margin-right: 0.85rem;
+}
+
+.view__rents__btn__container {
+  margin-right: 1rem;
+}
+
+.services__bottom__content > div > .view__rents__btn {
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  text-align: right;
+  color: blue;
+  font-weight: bold;
+  justify-content: end;
+  align-items: center;
+}
+
+.view__rents__btn > a:last-of-type {
+  margin-top: 0.3rem;
+}

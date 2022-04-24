@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  outline: none;
+  border: none;
+}
+
+.primary-btn {
+  background-color: #f39c12;
+  padding: 0.85rem 2.5rem;
+  font-family: "Roboto Mono", monospace;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.alert__message {
+  position: absolute;
+}
+
+.success__message {
+  background-color: rgb(16, 211, 120);
+  padding: 0.4rem 8rem;
+  border-radius: 10px;
+}
+.error__message {
+  background-color: rgb(218, 61, 49);
+  padding: 0.4rem 8rem;
+  border-radius: 10px;
+}
+
+.register__message {
+  right: 10%;
+  top: 10%;
+  z-index: 100;
+  color: white;
+  animation: slide-from-right 0.5s ease-in;
+}
+
+.field__message {
+  right: 10%;
+  top: 10%;
+  z-index: 100;
+  color: white;
+  animation: slide-from-right 0.5s ease-in;
+}
+
+@keyframes slide-from-right {
+  0% {
+    right: -100%;
+  }
+
+  100% {
+    right: 10%;
+  }
+}
+
+.individual__bike__container__section {
+  width: 70%;
+  margin: auto;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+ul.breadcrumb {
+  list-style: none;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+ul.breadcrumb li + li:before {
+  color: black;
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+.individual__bike__container {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 0.75rem;
+}
+
+.individual__bike__container > .image__section > img {
+  width: 450px;
+}
+
+.bike__information__section {
+  margin-left: 3rem;
+}
+
+.bike__information__section > h1,
+h3 {
+  line-height: 1rem;
+}
+
+.bike__information__section > p {
+  margin-top: 2rem;
+}
+
+.rating__section {
+  display: flex;
+  align-items: center;
+  color: rgb(244, 186, 93);
+  margin-bottom: 1rem;
+}
+
+.rating__section > p {
+  font-size: 1.3rem;
+}
+
+.book__bike__btn {
+  color: white;
+  margin-top: 2rem;
+}
+
+.comments__container__section {
+  margin-bottom: 3rem;
+}
+
+.comments__container {
+  width: 55%;
+  margin: 1rem auto;
+}
+
+.comment__info {
+  border: 2px solid rgb(219, 219, 219);
+}
+
+.comment__header {
+  padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.comment__info > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  background-color: rgb(236, 236, 236);
+  padding: 1rem 1.5rem;
+}
+
+.comment__info > div > div {
+  display: flex;
+  align-items: center;
+}
+
+.comment__info > div > div > img {
+  width: 25px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.comment__info > div > div > p {
+  font-size: 14px;
+  margin-right: 0.5rem;
+}
+
+.comment__info > div > div > p {
+  color: rgb(41, 170, 41);
+}
+
+.login__action__para {
+  width: 55%;
+  margin: 0 auto;
+}
+
+.login__action__para > a {
+  color: green;
+}
+
+.add__comments__container {
+  width: 50%;
+  margin: 0 auto 4rem;
+}
+
+.add__comments__heading {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.comment__btn {
+  background-color: rgb(70, 121, 217);
+  padding: 0.85rem 3rem;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}

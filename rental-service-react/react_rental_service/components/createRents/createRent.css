@@ -1,0 +1,24 @@
+.create__rents__container {
+  background-color: #3570dc;
+  min-height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
+
+.create__rents__form {
+  width: 40%;
+  margin: auto;
+  background-color: white;
+  border-radius: 15px;
+  padding: 1rem 3rem;
+}
+
+.rents__heading {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+}
