@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import Navbar from "../components/homepage/navbar/Navbar";
 import Footer from "../components/homepage/footer/Footer";
@@ -24,6 +24,7 @@ const IndividualBike = () => {
   const [success, setSuccess] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   function createCommentRequest(event) {
     event.preventDefault();
@@ -85,6 +86,10 @@ const IndividualBike = () => {
   }
 
   useEffect(() => {
+    if (!cookies.jwt) {
+      navigate("/login");
+    }
+
     axios
       .get(url)
       .then((res) => {

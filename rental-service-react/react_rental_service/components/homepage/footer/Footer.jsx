@@ -64,7 +64,6 @@ const Footer = () => {
               name="email"
               id="email"
               className="email subscribe-input"
-              autocomplete="off"
               placeholder="Your email"
             />
             <button type="submit" className="subscribe-btn">
