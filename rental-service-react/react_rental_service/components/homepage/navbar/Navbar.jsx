@@ -39,6 +39,8 @@ const Navbar = () => {
             <Link to={"/store"}>STORE</Link>
             {isAdmin && <Link to={"/rents"}>ADD SERVICES</Link>}
             {isAdmin && <Link to={"/addbikes"}>ADD BIKES</Link>}
+            {isAdmin && <Link to={"/admin/orders"}>USERORDERS</Link>}
+            <Link to={"/orders"}>ORDERS</Link>
             <Link to={"/dashboard"}>DASHBOARD</Link>
             <Link to={"/logout"}>LOGOUT</Link>
           </ul>

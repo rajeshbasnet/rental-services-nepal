@@ -21,6 +21,13 @@ const IndividualBike = () => {
   });
   const user_id = parseInt(cookies.id);
 
+  const [order, setOrder] = useState({
+    quantity: 1,
+    sum: 0,
+    user_id: user_id,
+    bike_id: id,
+  });
+
   const [success, setSuccess] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [message, setMessage] = useState("");
@@ -85,6 +92,45 @@ const IndividualBike = () => {
       });
   }
 
+  function postOrderRequest(price) {
+    axios
+      .post("http://localhost:5000/orders", {
+        quantity: order.quantity,
+        sum: order.quantity * parseInt(price),
+        user_id,
+        bike_id: id,
+      })
+      .then((res) => {
+        if (res.status == "200") {
+          if (res.data.error) {
+            setHasError(true);
+            setMessage(res.data.message);
+
+            setTimeout(() => {
+              setHasError(false);
+            }, 1000);
+          }
+
+          if (!res.data.error) {
+            setSuccess(true);
+            setMessage(res.data.message);
+
+            setTimeout(() => {
+              setSuccess(false);
+            }, 1000);
+          }
+        }
+      })
+      .catch((error) => {
+        setHasError(true);
+        setMessage("Some internal error occurred");
+
+        setTimeout(() => {
+          setHasError();
+        }, 1000);
+      });
+  }
+
   useEffect(() => {
     if (!cookies.jwt) {
       navigate("/login");
@@ -123,7 +169,7 @@ const IndividualBike = () => {
 
       <div className="individual__bike__container__section">
         <div className="breadcrumb__container">
-          <ul class="breadcrumb">
+          <ul className="breadcrumb">
             <li>
               <a href="/">Home</a>
             </li>
@@ -155,9 +201,33 @@ const IndividualBike = () => {
             </div>
             <h3>Price : {bike.bike_price} / hr</h3>
             <p>{bike.bike_description}</p>
-            <button className="btn primary-btn book__bike__btn">
-              Book Now
-            </button>
+
+            <form
+              onSubmit={(event) => {
+                event.preventDefault();
+                postOrderRequest(bike.bike_price);
+              }}
+            >
+              <div>
+                <label htmlFor="order_quantity">Quantity : </label>
+                <input
+                  id="order_quantity"
+                  className="order_quantity"
+                  type="number"
+                  value={order.quantity}
+                  onChange={(event) => {
+                    setOrder({ ...order, quantity: event.target.value });
+                  }}
+                />
+              </div>
+              <button
+                style={{ display: "block" }}
+                type="submit"
+                className="btn primary-btn book__bike__btn"
+              >
+                Book Now
+              </button>
+            </form>
           </div>
         </div>
       </div>

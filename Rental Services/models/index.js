@@ -23,9 +23,16 @@ db.Location = require("./location")(sequelize, Sequelize);
 db.Service = require("./service")(sequelize, Sequelize);
 db.Comment = require("./comments")(sequelize, Sequelize);
 
+//update
+db.Order = require("./orders")(sequelize, Sequelize);
+
 db.Location.hasMany(db.Service);
 db.Service.hasMany(db.Bike);
 db.User.hasMany(db.Comment);
 db.Bike.hasMany(db.Comment);
+
+//update
+db.User.hasMany(db.Order);
+db.Bike.hasMany(db.Order);
 
 module.exports = db;

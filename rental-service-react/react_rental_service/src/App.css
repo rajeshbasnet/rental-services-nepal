@@ -95,7 +95,6 @@ ul.breadcrumb li a:hover {
 .individual__bike__container {
   display: flex;
   align-items: flex-start;
-  margin-top: 0.75rem;
 }
 
 .individual__bike__container > .image__section > img {
@@ -108,11 +107,15 @@ ul.breadcrumb li a:hover {
 
 .bike__information__section > h1,
 h3 {
-  line-height: 1rem;
+  line-height: 0.85rem;
+  margin-left: 0rem;
+  padding-left: 0rem;
+  text-align: left;
+  text-transform: capitalize;
 }
 
 .bike__information__section > p {
-  margin-top: 2rem;
+  margin: 1rem 0;
 }
 
 .rating__section {
@@ -203,4 +206,22 @@ h3 {
   font-weight: bold;
   letter-spacing: 1.5px;
   cursor: pointer;
+}
+
+.order_quantity {
+  width: 50px;
+  padding: 0.45rem 0 0.45rem 0.65rem;
+  text-align: center;
+  font-size: 1.3rem;
+  outline: none;
+  font-weight: bold;
+}
+
+.user__order__container {
+  min-height: 60vh;
+  display: grid;
+  place-items: center;
+}
+
+.user__order__container > table {
 }

@@ -10,6 +10,8 @@ import LogoutPage from "../page/logout";
 import IndividualBike from "../page/bike";
 import AddBikes from "../components/createBikes/CreateBikes";
 import DashboardPage from "../page/dashboardPage";
+import OrderPage from "../page/orders";
+import AdminOrder from "../page/adminOrders";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route path="/bike/:id" element={<IndividualBike />} />
         <Route path="/addbikes" element={<AddBikes />} />
         <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/orders" element={<OrderPage />} />
+        <Route path="/admin/orders" element={<AdminOrder />} />
       </Routes>
     </div>
   );
