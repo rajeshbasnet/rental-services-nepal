@@ -56,7 +56,7 @@ exports.getOrdersFromUserId = async (req, res) => {
       });
     }
 
-    await res.send({
+    await res.status(200).send({
       userOrderBike,
     });
   } catch (err) {
@@ -161,24 +161,26 @@ exports.updatePaymentFromOrders = async (req, res) => {
       });
     }
 
-    const order = await Order(
+    const { order_id } = req.body;
+
+    const order = await Order.update(
       {
-        id: req.body.order_id,
+        payment: true,
       },
       {
         where: {
-          payment: true,
+          id: order_id,
         },
       }
     );
 
     if (order) {
-      res.status(200).json({
-        message: "Order successfully created !",
+      await res.status(200).json({
+        message: "Order successfully placed !",
         error: false,
       });
     } else {
-      res.status(200).json({
+      await res.status(200).json({
         message: "Cannot place order !",
         error: true,
       });

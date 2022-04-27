@@ -71,7 +71,27 @@ const Order = () => {
   }
 
   function orderCompleteRequest() {
-    alert("Order has been placed successfully");
+    if (orders.length > 0) {
+      let error = false;
+
+      orders.forEach((order) => {
+        let url = `http://localhost:5000/orders`;
+        axios
+          .put(url, {
+            order_id: order.orders.order.id,
+          })
+          .then((res) => {
+            console.log(res.data.message);
+          })
+          .catch((error) => {
+            error = true;
+          });
+      });
+
+      if (!error) {
+        alert("Your order has been placed successfully !");
+      }
+    }
   }
 
   return (
